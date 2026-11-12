@@ -28,6 +28,14 @@ class EntryPayload(BaseModel):
     remark: str | None = None
 
 
+class LinkagePayload(BaseModel):
+    """批量联动编排提交：一组筛选器编号 + 一组联动维度，整组校验、整组发布。"""
+
+    filter_codes: list[str] = Field(default_factory=list)
+    dimensions: list[str] = Field(default_factory=list)
+    remark: str | None = None
+
+
 
 class IndicatorEntry(BaseModel):
     """业务指标明细结构。"""
